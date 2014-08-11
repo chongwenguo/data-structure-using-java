@@ -1,0 +1,642 @@
+beginning
+the empty list is
+There are 2 entries
+going forward
+  0: Dummy Node
+  1: Dummy Node
+
+going backward
+  0: Dummy Node
+  1: Dummy Node
+
+ADD record '    3 (    12    17    18)'
+yes, added record '    3 (    12    17    18)'
+the list is now
+There are 3 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2: Dummy Node
+
+ADD record '    3 (    12    13    14)'
+yes, added record '    3 (    12    13    14)'
+the list is now
+There are 4 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    13    14)
+  2:     3 (    12    17    18)
+  3: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3: Dummy Node
+
+ADD record '    3 (    10    16    17)'
+yes, added record '    3 (    10    16    17)'
+the list is now
+There are 5 entries
+going forward
+  0: Dummy Node
+  1:     3 (    10    16    17)
+  2:     3 (    12    13    14)
+  3:     3 (    12    17    18)
+  4: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     3 (    10    16    17)
+  4: Dummy Node
+
+ADD record '    4 (    10    12    13    14)'
+yes, added record '    4 (    10    12    13    14)'
+the list is now
+There are 6 entries
+going forward
+  0: Dummy Node
+  1:     4 (    10    12    13    14)
+  2:     3 (    10    16    17)
+  3:     3 (    12    13    14)
+  4:     3 (    12    17    18)
+  5: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     3 (    10    16    17)
+  4:     4 (    10    12    13    14)
+  5: Dummy Node
+
+ADD record '    2 (    12    18)'
+yes, added record '    2 (    12    18)'
+the list is now
+There are 7 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     4 (    10    12    13    14)
+  3:     3 (    10    16    17)
+  4:     3 (    12    13    14)
+  5:     3 (    12    17    18)
+  6: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     3 (    10    16    17)
+  4:     4 (    10    12    13    14)
+  5:     2 (    12    18)
+  6: Dummy Node
+
+CONTAINS? '    2 (    12    18)'
+yes, list has '    2 (    12    18)'
+the list is now
+There are 7 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     4 (    10    12    13    14)
+  3:     3 (    10    16    17)
+  4:     3 (    12    13    14)
+  5:     3 (    12    17    18)
+  6: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     3 (    10    16    17)
+  4:     4 (    10    12    13    14)
+  5:     2 (    12    18)
+  6: Dummy Node
+
+CONTAINS? '    3 (    10    14    18)'
+no, list does not contain '    3 (    10    14    18)'
+the list is now
+There are 7 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     4 (    10    12    13    14)
+  3:     3 (    10    16    17)
+  4:     3 (    12    13    14)
+  5:     3 (    12    17    18)
+  6: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     3 (    10    16    17)
+  4:     4 (    10    12    13    14)
+  5:     2 (    12    18)
+  6: Dummy Node
+
+CONTAINS? '    2 (    10    14)'
+no, list does not contain '    2 (    10    14)'
+the list is now
+There are 7 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     4 (    10    12    13    14)
+  3:     3 (    10    16    17)
+  4:     3 (    12    13    14)
+  5:     3 (    12    17    18)
+  6: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     3 (    10    16    17)
+  4:     4 (    10    12    13    14)
+  5:     2 (    12    18)
+  6: Dummy Node
+
+REMOVE '    3 (    10    16    17)'
+successfully removed '    3 (    10    16    17)'
+the list is now
+There are 6 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     4 (    10    12    13    14)
+  3:     3 (    12    13    14)
+  4:     3 (    12    17    18)
+  5: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    12    13    14)
+  4:     2 (    12    18)
+  5: Dummy Node
+
+CONTAINS? '    2 (    10    12)'
+no, list does not contain '    2 (    10    12)'
+the list is now
+There are 6 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     4 (    10    12    13    14)
+  3:     3 (    12    13    14)
+  4:     3 (    12    17    18)
+  5: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    12    13    14)
+  4:     2 (    12    18)
+  5: Dummy Node
+
+REMOVE '    4 (    10    12    13    14)'
+successfully removed '    4 (    10    12    13    14)'
+the list is now
+There are 5 entries
+going forward
+  0: Dummy Node
+  1:     2 (    12    18)
+  2:     3 (    12    13    14)
+  3:     3 (    12    17    18)
+  4: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     2 (    12    18)
+  4: Dummy Node
+
+ADD record '    4 (    10    14    17    18)'
+yes, added record '    4 (    10    14    17    18)'
+the list is now
+There are 6 entries
+going forward
+  0: Dummy Node
+  1:     4 (    10    14    17    18)
+  2:     2 (    12    18)
+  3:     3 (    12    13    14)
+  4:     3 (    12    17    18)
+  5: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     2 (    12    18)
+  4:     4 (    10    14    17    18)
+  5: Dummy Node
+
+ADD record '    4 (    10    12    17    19)'
+yes, added record '    4 (    10    12    17    19)'
+the list is now
+There are 7 entries
+going forward
+  0: Dummy Node
+  1:     4 (    10    12    17    19)
+  2:     4 (    10    14    17    18)
+  3:     2 (    12    18)
+  4:     3 (    12    13    14)
+  5:     3 (    12    17    18)
+  6: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     2 (    12    18)
+  4:     4 (    10    14    17    18)
+  5:     4 (    10    12    17    19)
+  6: Dummy Node
+
+ADD record '    2 (    11    18)'
+yes, added record '    2 (    11    18)'
+the list is now
+There are 8 entries
+going forward
+  0: Dummy Node
+  1:     2 (    11    18)
+  2:     4 (    10    12    17    19)
+  3:     4 (    10    14    17    18)
+  4:     2 (    12    18)
+  5:     3 (    12    13    14)
+  6:     3 (    12    17    18)
+  7: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     2 (    12    18)
+  4:     4 (    10    14    17    18)
+  5:     4 (    10    12    17    19)
+  6:     2 (    11    18)
+  7: Dummy Node
+
+ADD record '    3 (    10    14    18)'
+yes, added record '    3 (    10    14    18)'
+the list is now
+There are 9 entries
+going forward
+  0: Dummy Node
+  1:     3 (    10    14    18)
+  2:     2 (    11    18)
+  3:     4 (    10    12    17    19)
+  4:     4 (    10    14    17    18)
+  5:     2 (    12    18)
+  6:     3 (    12    13    14)
+  7:     3 (    12    17    18)
+  8: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     2 (    12    18)
+  4:     4 (    10    14    17    18)
+  5:     4 (    10    12    17    19)
+  6:     2 (    11    18)
+  7:     3 (    10    14    18)
+  8: Dummy Node
+
+REMOVE '    2 (    12    18)'
+successfully removed '    2 (    12    18)'
+the list is now
+There are 8 entries
+going forward
+  0: Dummy Node
+  1:     3 (    10    14    18)
+  2:     2 (    11    18)
+  3:     4 (    10    12    17    19)
+  4:     4 (    10    14    17    18)
+  5:     3 (    12    13    14)
+  6:     3 (    12    17    18)
+  7: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7: Dummy Node
+
+CONTAINS? '    3 (    15    16    17)'
+no, list does not contain '    3 (    15    16    17)'
+the list is now
+There are 8 entries
+going forward
+  0: Dummy Node
+  1:     3 (    10    14    18)
+  2:     2 (    11    18)
+  3:     4 (    10    12    17    19)
+  4:     4 (    10    14    17    18)
+  5:     3 (    12    13    14)
+  6:     3 (    12    17    18)
+  7: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7: Dummy Node
+
+ADD record '    2 (    10    14)'
+yes, added record '    2 (    10    14)'
+the list is now
+There are 9 entries
+going forward
+  0: Dummy Node
+  1:     2 (    10    14)
+  2:     3 (    10    14    18)
+  3:     2 (    11    18)
+  4:     4 (    10    12    17    19)
+  5:     4 (    10    14    17    18)
+  6:     3 (    12    13    14)
+  7:     3 (    12    17    18)
+  8: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8: Dummy Node
+
+ADD record '    2 (    10    12)'
+yes, added record '    2 (    10    12)'
+the list is now
+There are 10 entries
+going forward
+  0: Dummy Node
+  1:     2 (    10    12)
+  2:     2 (    10    14)
+  3:     3 (    10    14    18)
+  4:     2 (    11    18)
+  5:     4 (    10    12    17    19)
+  6:     4 (    10    14    17    18)
+  7:     3 (    12    13    14)
+  8:     3 (    12    17    18)
+  9: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9: Dummy Node
+
+ADD record '    3 (    15    16    17)'
+yes, added record '    3 (    15    16    17)'
+the list is now
+There are 11 entries
+going forward
+  0: Dummy Node
+  1:     3 (    15    16    17)
+  2:     2 (    10    12)
+  3:     2 (    10    14)
+  4:     3 (    10    14    18)
+  5:     2 (    11    18)
+  6:     4 (    10    12    17    19)
+  7:     4 (    10    14    17    18)
+  8:     3 (    12    13    14)
+  9:     3 (    12    17    18)
+ 10: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10: Dummy Node
+
+ADD record '    3 (    12    17    19)'
+yes, added record '    3 (    12    17    19)'
+the list is now
+There are 12 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    19)
+  2:     3 (    15    16    17)
+  3:     2 (    10    12)
+  4:     2 (    10    14)
+  5:     3 (    10    14    18)
+  6:     2 (    11    18)
+  7:     4 (    10    12    17    19)
+  8:     4 (    10    14    17    18)
+  9:     3 (    12    13    14)
+ 10:     3 (    12    17    18)
+ 11: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10:     3 (    12    17    19)
+ 11: Dummy Node
+
+CONTAINS? '    2 (    13    19)'
+no, list does not contain '    2 (    13    19)'
+the list is now
+There are 12 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    19)
+  2:     3 (    15    16    17)
+  3:     2 (    10    12)
+  4:     2 (    10    14)
+  5:     3 (    10    14    18)
+  6:     2 (    11    18)
+  7:     4 (    10    12    17    19)
+  8:     4 (    10    14    17    18)
+  9:     3 (    12    13    14)
+ 10:     3 (    12    17    18)
+ 11: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10:     3 (    12    17    19)
+ 11: Dummy Node
+
+CONTAINS? '    2 (    11    18)'
+yes, list has '    2 (    11    18)'
+the list is now
+There are 12 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    19)
+  2:     3 (    15    16    17)
+  3:     2 (    10    12)
+  4:     2 (    10    14)
+  5:     3 (    10    14    18)
+  6:     2 (    11    18)
+  7:     4 (    10    12    17    19)
+  8:     4 (    10    14    17    18)
+  9:     3 (    12    13    14)
+ 10:     3 (    12    17    18)
+ 11: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10:     3 (    12    17    19)
+ 11: Dummy Node
+
+CONTAINS? '    2 (    13    18)'
+no, list does not contain '    2 (    13    18)'
+the list is now
+There are 12 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    19)
+  2:     3 (    15    16    17)
+  3:     2 (    10    12)
+  4:     2 (    10    14)
+  5:     3 (    10    14    18)
+  6:     2 (    11    18)
+  7:     4 (    10    12    17    19)
+  8:     4 (    10    14    17    18)
+  9:     3 (    12    13    14)
+ 10:     3 (    12    17    18)
+ 11: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10:     3 (    12    17    19)
+ 11: Dummy Node
+
+CONTAINS? '    4 (    11    13    16    18)'
+no, list does not contain '    4 (    11    13    16    18)'
+the list is now
+There are 12 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    19)
+  2:     3 (    15    16    17)
+  3:     2 (    10    12)
+  4:     2 (    10    14)
+  5:     3 (    10    14    18)
+  6:     2 (    11    18)
+  7:     4 (    10    12    17    19)
+  8:     4 (    10    14    17    18)
+  9:     3 (    12    13    14)
+ 10:     3 (    12    17    18)
+ 11: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10:     3 (    12    17    19)
+ 11: Dummy Node
+
+CONTAINS? '    5 (    12    15    16    18    19)'
+no, list does not contain '    5 (    12    15    16    18    19)'
+the list is now
+There are 12 entries
+going forward
+  0: Dummy Node
+  1:     3 (    12    17    19)
+  2:     3 (    15    16    17)
+  3:     2 (    10    12)
+  4:     2 (    10    14)
+  5:     3 (    10    14    18)
+  6:     2 (    11    18)
+  7:     4 (    10    12    17    19)
+  8:     4 (    10    14    17    18)
+  9:     3 (    12    13    14)
+ 10:     3 (    12    17    18)
+ 11: Dummy Node
+
+going backward
+  0: Dummy Node
+  1:     3 (    12    17    18)
+  2:     3 (    12    13    14)
+  3:     4 (    10    14    17    18)
+  4:     4 (    10    12    17    19)
+  5:     2 (    11    18)
+  6:     3 (    10    14    18)
+  7:     2 (    10    14)
+  8:     2 (    10    12)
+  9:     3 (    15    16    17)
+ 10:     3 (    12    17    19)
+ 11: Dummy Node
+
+ending

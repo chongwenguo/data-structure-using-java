@@ -1,0 +1,26 @@
+add 12 17 18
+add 12 13 14
+add 10 16 17
+add 10 12 13 14
+add 12 18
+contains 12 18
+contains 10 14 18
+contains 10 14
+remove 10 16 17
+contains 10 12
+remove 10 12 13 14
+add 10 14 17 18
+add 10 12 17 19
+add 11 18
+add 10 14 18
+remove 12 18
+contains 15 16 17
+add 10 14
+add 10 12
+add 15 16 17
+add 12 17 19
+contains 13 19
+contains 11 18
+contains 13 18
+contains 11 13 16 18
+contains 12 15 16 18 19

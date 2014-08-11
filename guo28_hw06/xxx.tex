@@ -1,0 +1,1089 @@
+Auditing a DRE-Based Election in South Carolina
+
+M. U. LtipleAuthors
+Multiple Institutions
+Abstract
+Following a highly publicized and highly anomalous outcome in the statewide
+Democratic primary in South Carolina in June 2010, the authors undertook
+to audit the election results based on the data that was available through
+the Freedom of Information Act.
+South Carolina votes entirely on paperless iVotronic Direct Recording
+Electronic (DRE) machines from ES&S.
+There is, therefore, no auditable primary data (such as paper ballots
+would be), but there are several audit trail files that are produced
+by the software of the ES&S system.
+We have analyzed these files and have been able to show that votes were not
+counted, that procedures that should have been checked automatically were not
+checked, and that vote data to support the certified counts has not been
+collected or stored.
+
+Introduction
+
+Following a highly publicized and highly anomalous outcome
+in the statewide Democratic primary in South Carolina in
+June 2010, the authors undertook to audit the election results
+based on the data that was available through the Freedom of Information Act.
+South Carolina votes entirely on paperless iVotronic Direct Recording
+Electronic (DRE) machines from ES&S.
+There is, therefore, no auditable primary data (such as paper ballots
+would be), but there are several audit trail files that are produced by
+the software of the ES&S system.
+To the extent that those files are accurate, they can, however,
+be analyzed and crosschecked with the official results.
+
+Although the initial examination by the authors began in the
+summer of 2010, it was not until after the general election
+on 11/02/2010 that large volumes of data were requested and received
+through the Freedom of Information Act and then analyzed using
+computer programs written by the first and fourth authors.
+This closer examination was spurred in part by yet another anomalous
+result--—in Colleton County, South Carolina, it is now agreed that
+there were 1389 more votes in the counts certified by state and
+county officials than in fact were cast in the election.
+
+The authors have now obtained and analyzed data from more than a dozen counties.
+ What we describe here are our analyses and conclusions, including our
+conclusion that the election system as used in the state is consistently
+used in error and that there are few if any provisions in the current
+protocols for conducting elections that would detect even some of the
+errors that can be predicted to be routine.
+We believe our analyses and conclusions provide a cautionary tale about
+the use of complex technology, by minimally trained users, under
+conditions almost guaranteed to induce errors from stress and fatigue,
+to produce results about an election event for which no ground truth
+can ever be known.
+
+We emphasize that we have found no evidence either of fraud or of software
+failure in the individual voting machines used in the election.
+What we have found is ample evidence of a failure in the
+election system,
+however, due apparently to a reliance on protocols and procedures and
+the absence of any reconciliation of the data at the end of the day to
+ensure that those protocols have been followed.
+We will focus in this paper largely on the data from Richland County.
+Richland is one of the larger counties in population (with 219,042 registered
+voters) and contains the state capital of Columbia and the main campus
+of the University of South Carolina.
+More importantly, in the election on 11/02/2010, all the obvious possible errors
+that could occur did occur, so this is exemplary (albeit in a negative sense)
+for studying the human factors failings of the election system in South Carolina.
+In Richland County, there were 1127 votes that did not get included in
+the official certified count, for two different reasons, in two
+different precincts; there were two precincts for which no individual vote
+data had been collected to support the totals that had been certified;
+and there were seven additional precincts for which some of the vote data
+had not been collected.
+Although this data
+We will consistently use data as a singular noun.
+has now been found, it represented nearly 3000 additional
+votes for which no supporting individual vote data would have existed had
+we not discovered that the data was absent, and the 1127 votes not
+included in the certified count remain to this day missing from the
+official record of the election of 11/02/2010.
+
+We also note that some human factors problems with the software could
+lead to errors and open up the possibility for an election to be corrupted.
+In computer science classes, students are taught to use meaningful variable
+names, and not to use a variable named year, for example, to hold the
+name of a month.
+Serious human factors problems arise when terms that have common meanings
+are used, but the system uses the data beneath those terms in a different way.
+We remark as an example that the event log puts a time and date stamp
+on all events, but this stamp does not actually affect the ability of the
+machine to collect votes (although it does prevent the machine from being
+closed early unless specific early-close options are chosen).
+We find it to be a flaw that a ``timestamp'' does not affect the functioning of
+the machines and can be set and re-set at will.
+Indeed, the machines will collect votes even if the time and date counters
+are set to all zeros, we have instances of machines collecting votes with
+any number of incorrect dates, and one machine in Anderson County was
+apparently happy to collect votes throughout the day of April 12, 2053.
+
+Finally, we note that although apparently no election outcomes would have
+changed based on vote discrepancies uncovered by our audit, the problems
+in Richland County have been observed to varying degrees in nearly
+every other county we have examined.
+Lacking a program to verify prior to certifying a count that all the
+data has been accounted for, it seems routine for data supporting those
+counts not to be collected, and it is not unique that votes went uncounted
+in Richland County.
+Through the League of Women Voters of South Carolina, we have recommended
+that all elections be audited prior to certification either by the code
+we have written (and have offered for free to the state and counties)
+or by comparable code that would detect these obvious errors.
+We feel that trust in our democratic system is undermined when elections
+are not transparent and their results cannot be independently verified
+to be justified based on the data.
+
+Elections:  The System Problem
+
+The electronic voting system used in South Carolina is intended to be
+a technology solution to a complicated real-world problem.
+In order to understand the nature of technology applied to this problem,
+we describe some salient points that illustrate why elections in general
+are a hard problem to solve.
+
+First, an election is a one-time event.
+This is not an event that permits do-overs.
+Election day for federal elections is the first Tuesday in November in
+even-numbered years, period.
+This makes it very hard to test a technology solution for handling an election.
+
+Second, by its very nature, an election is an important event for which
+no one knows the ground truth.
+Repeated assertions by elections officials that no votes have been lost
+are utterly absurd on their face; no one knows the true outcome of an
+election, so no one knows what might have been lost and not accounted for.
+
+Third, elections in the United States are conducted in a highly distributed
+way, by states, counties, and local jurisdictions, using essentially
+volunteer labor (in South Carolina a poll worker earns 120 for one day
+of training plus one day at the polls).
+The actual election is conducted in multiple locations, with more or less
+connectivity by phone or Internet to a central location.
+Even in the era of mobile phones, this is a process that is hard to manage.
+
+Finally, in part because an election is a one-time event, it is
+essentially impossible to test any technology solution at scale;
+the election itself constitutes the test.
+Many technology solutions work well on a small scale but do not work
+well when done for the masses.
+Many human factors (the famous butterfly ballot in south Florida in
+the 2000 election is one example) might very well have significant effects
+on the outcome of an election, but are hard to test prior to the election itself.
+By the time sufficiently many eyeballs have been applied to the election
+process as to provide a calibration of the human factors, the election
+is underway with an evening closing time rapidly approaching.
+
+All these factors argue for as simple a solution as possible, because all
+these factors argue against complexity.
+A complex solution is less likely to be understood by part time and
+volunteer workers.
+A complex solution is less likely to be distributed successfully to an
+entire state.
+A complex solution is less likely to be understood in a uniform way by all voters.
+And a complex solution is less likely to be implemented in a
+uniform way under the high stress situations of the actual election day.
+
+The ES&S Voting System Used in South Carolina
+
+For the purposes of our discussion here, we present a somewhat
+simplified view of the election process in South Carolina, together
+with a description of the system components that are included in our audit.
+
+The individual voting machines (also referred to as terminals)
+carry the name iVotronic from the vendor, ES&S
+(Election Systems and Software), in Omaha, Nebraska.
+The state of South Carolina purchased the ES&S system beginning in
+2004 (with the purchase completed by the 2006 election).
+The roughly 2000 precincts in South Carolina require roughly 12000
+iVotronic machines.
+In Richland County, there were on 11/02/2010 about 820 iVotronics used to
+collect about 114,000 total votes.
+Although some voters do vote on paper absentee ballots (these are usually
+the absentee ballots obtained by mail), the absentee voting that takes
+place in person at county headquarters is done on the iVotronics, just
+as is the election day voting.
+We note that the 11/02/2010 election set a record for the volume of
+absentee voting, and that although South Carolina does not permit
+early voting per se, there are a number of reasons that justify absentee voting.
+
+Each iVotronic is opened for voting on election day using a PEB
+(Personalized Electronic Ballot), a handheld device about the size of a
+paperback book.
+The PEB fits into a recess in the iVotronic and makes connection with
+the iVotronic via an infrared link with a standard protocol.
+At the end of an election day an iVotronic can only be closed and its
+votes collected by the same PEB that opened it
+This isn't quite true;
+there are super PEBs that can also be used, perhaps after the fact to correct
+for a failure of the precinct workers to close a machine properly.,
+and the official procedure from the state of South Carolina is that
+machines are to be opened only with a green stripe
+This refers to a green (or red in the case of red stripe PEBs) rubber gasket
+that wraps around the
+device and covers up the seam between the two halves of the plastic cover
+for the PEB.
+PEB, with one green stripe PEB per precinct that is according to
+protocol only to be used to open the machines in the morning and to
+close the machines and collect the vote totals at the end of the election day.
+
+During the day, each iVotronic is opened to receive one vote
+by a ``red stripe'' PEB whose purpose is to open each machine to accept
+a single vote during the process of an election.
+
+Both types of PEB communicate with the iVotronic machines not with an
+electrical connection but via a standard infrared protocol.
+The ability of common PDAs to be programmed to emulate PEBs was noted
+in the EVEREST report.
+
+For reasons that will appear perhaps shortsighted later, South Carolina
+has chosen to make the green stripe and the red stripe
+PEBs functionally equivalent.
+This is justified by a desire to ensure that some PEB might be
+able to open and close each iVotronic in the various precincts.
+This will be seen to be shortsighted because it is exactly this capability
+that led to votes not being included in the certified count in
+Richland County and in Horry County; this also led to problems (that
+happened to be caught before certification) in Charleston County.
+In other words, by making the two kinds of PEBs functionally equivalent,
+an opportunity for human error was created, and no crosscheck was
+included in the vote counting process to
+ensure that this error did not occur.
+The code written by the first and fourth authors does provide this kind of
+crosscheck and has detected the errors that should have been expected to happen.
+
+At the end of the election day, the green stripe PEBs are to be used to
+close the iVotronic machines in a given precinct.
+As part of closing the machines, the event log for that machine
+and the vote image log of the individual ballots cast are written
+to a compact flash memory card.
+The memory cards are then to be pulled from the iVotronics, placed in a
+plastic bag, and returned to county headquarters.
+The PEBs as part of closing the machines have gathered the vote totals into
+their internal memory.
+The PEBs are similarly returned to county headquarters, and their contents
+are dumped into a master file that becomes the official and certified count.
+
+Issues and Problems with the Election System
+
+There are three kinds of issues that can be addressed in the evaluation of the
+iVotronic-based election system.
+
+Security Issues
+
+These are issues related to how easy or difficult it may be to
+corrupt the system so as to produce a result different from the
+collective intent of the voters.
+We have not pursued this line of reasoning except to note that
+the Ohio EVEREST report EVEREST thoroughly discredited the
+ES&S system used in South Carolina for security reasons.
+
+Software Quality Issues
+These are issues related to whether or not we ought to trust the results
+of the system based on the quality of the software used to produce the results.
+The EVEREST report is as strongly negative about the quality of the software
+as it is about the security failings.
+We have seen little in our analysis that suggests the EVEREST report is
+too negative; in contrast, we have seen a number of examples that justify
+the negative opinions of the EVEREST report.
+For instance, in Colleton County, the ES&S iVotronic system reported vote
+totals for several contests that exceeded the total number of votes
+cast in the county by more than 10 without logging an error or warning.
+We have also noticed the obvious duplication in the system of what should
+be standard data files, and in some cases this duplication has led to
+problems in producing a correct count.
+However, the quality of the software inside the iVotronics and the
+quality of the software in the rest of the election system is not
+the primary focus of this report.
+Our focus is on the human factors to be discussed below.
+
+Human Factors Issues
+
+In the use of any technology, it is necessary to consider whether it is
+reasonable to expect the technology to produce the desired results under
+the conditions that will be known to exist when the technology is used.
+Specifically we should ask the question:  Can we expect the election
+system used in South Carolina to produce reliable, accurate results based
+on the way in which it will be used, by the people who will be using it,
+under the normal operating conditions of an election?
+
+The findings presented here, based on our analysis of Richland County and other
+counties in the 11/02/2010 election, address the fact that the clear
+answer to this question is a resounding NO.
+It is reasonable to expect human error under the operating conditions
+of an election, and therefore the election system must include safeguards and
+crosschecks that will detect these obvious errors before they contribute to
+incorrect results.
+We have written several freely available programs to perform such checks and
+crosschecks; we have run these programs; they have detected both
+errors and indicated why those errors have occurred; and
+we maintain that programs such as ours should be mandated and routinely used.
+
+We emphasize that what we have written are simple programs.
+The fourth author’s code is less than 500 lines of Perl, and a
+workable version of the first author’s code has been the subject of a
+series of homework exercises in his second-semester course for
+undergraduate computer science majors; and execution of the program on the entire
+Richland County data takes less than two minutes even in an
+performance-poor programming language like Java.
+
+Auditing the Election System
+
+Auditing the count requires first that we identify the hardware and
+software components in the election system that contribute to the count
+and then that we validate and crosscheck the use of those components and
+the data that can be gathered from them.
+
+System Hardware Components
+
+There are two means by which vote totals can be collected.
+
+The PEB Count:
+The official protocol for tabulating votes uses the PEBs to collect the
+totals of the electronic ballots from each iVotronic at the time the polls close.
+The totals for each machine are downloaded to the green master PEB
+in each precinct as part of the process of closing each voting terminal.
+The totals are carried back to county headquarters in the PEBs and transferred
+to the Election Report Manager (ERM).
+The ERM aggregates the totals from the PEBs and produces a report
+containing the election results for the county.
+This is the primary source for the count that is certified
+by the state and the county.
+
+The paper absentee ballots and the failsafe, emergency, and provisional ballots
+are also included.
+These are somewhat harder to audit, the paper ballots because they are
+counted differently and the other ballots because the election commission must
+evaluate the legitimacy of those votes.
+We note that in South Carolina these other votes occur in virtual precincts.
+The absentee votes are given precinct numbers 750, 751, 752, etc.,
+and the other votes occur in precincts 800, 850, 851, etc., and 900.
+
+The primary source of the numbers used to produce the certified count
+are the totals collected by the PEB for each precinct.
+These totals are aggregated at the county level and reported out.
+
+The Vote Image Count:
+The second mechanism by which one could produce a count is to count
+the individual ballots in the vote image file.
+When the master PEB closes an iVotronic terminal, the vote image data and
+the event log for the machine are written to an internal compact flash
+memory card.
+After the terminals are shut down, the precinct workers are supposed to
+collect the internal CF cards from each machine.
+The cards are then carried back to election headquarters, and the audit
+data from the cards (the event log and the vote image data) is uploaded to
+the Election Report Manager after the votes are tabulated.
+The ERM consolidates the data from the CF cards from the different iVotronic
+machines and produces a single vote image file.
+This contains a sequence-randomized collection of all ballots cast, sorted
+by precinct and terminal.
+This file has precinct level tallies for all the candidates on the ballots.
+The event log data is similarly combined into a single file.
+For reference, we note that the event log file carries an EL152 file name
+and the vote image file carries an EL155 file name, although these do not
+appear to be the usual names by which election workers refer to the files;
+their work seems usually to be done through a more user-friendly screen
+with file choices to be produced.
+
+If the data from the compact flash cards is collected properly, there are
+then two more totals that could be used.
+One total is the count by machine of Vote cast events in the event log.
+The second is the actual count of individual votes from the vote image file.
+The total for each machine from the event log and the total for each
+machine from the vote image file should correspond with the number of votes
+reported for each machine by the PEB.
+And, of course, counting the individual votes in the vote image file
+by machine, by precinct, and by contest, should produce the same counts
+as were collected by the PEBs.
+It has been the code of the first and fourth authors, producing these counts,
+that has detected uncounted votes and vote data missing from the vote image files.
+
+There are thus three sets of hardware components that need to be accounted for
+in order to ensure that all votes are counted and that all the totals agree with
+each other.
+
+The iVotronic machines must be closed at the end of election day,
+the vote totals collected into a PEB, and the flash memory cards pulled
+so that the card data can be uploaded to the ERM.
+(Failure to do this was the cause of 752 votes not being counted in
+Bluff precinct in the November election 752 votes out of 1026 in
+the precinct were not counted).
+All iVotronic machines known to be in use on election day need to be
+verified as closed before the count is certified.
+
+The PEBs used to open iVotronic machines must also be
+used to close machines and collect ballot data.
+These must be accounted for at the end of the day.
+The failure to account for all PEBs used for these tasks caused some
+votes in Ward 21 to be uncounted and caused a correction on 11/03/2010
+to the counts in Charleston County.
+This failure to count happened because, contrary to protocol,
+multiple PEBs in a single precinct were used to open and close
+machines, but only one PEB (probably the green stripe PEB) had its
+totals collected at the end of the day.
+
+The flash memory cards from each iVotronic contain the
+vote image file data and event log data that corroborate the certified results.
+All the cards need to be accounted for before the vote is certified.
+The failure to do this led to missing vote image data for some machines
+in seven precincts and for all machines in two precincts.
+
+System Data Components
+
+There should be no need to rely only on policy, procedure, or protocol,
+because one can quite readily verify whether or not iVotronic machines
+remain unclosed and whether or not PEBs and flash memory cards have
+uncollected data.
+In order to perform this kind of audit and verify that the counts
+are correct, the following files can be used.
+
+The EL155 vote image file has the sequence-randomized individual electronic
+ballots cast by voters.
+A snapshot of data from this file appears as Appendix A in this document
+(with some apologies for line wrap).
+This file is essentially a printout file such as one might send to a printer.
+At the top of each page the precinct is labeled.
+The delimiter to indicate that a new ballot exists is the asterisk.
+A single ballot extends from one asterisked line to the next asterisked
+line, and each vote in a contest appears as a single line of data.
+The first entry in each line is the iVotronic serial number.
+The second number is the ballot image number (B/I) (also referred
+to at least in Richland County as the ballot style number).
+The third number is what we refer to as the candidate sequence number.
+By combining precinct number, iVotronic number, ballot image number,
+and candidate sequence number, one can identify the individual
+candidate and contest.
+
+A count of the number of asterisks in the vote image file should
+equal the count of iVotronic ballots collected in the PEBS, the number
+of official iVotronic votes in an election and the number
+of ``vote events'' in the event log file.
+The vote image file is, after all, or should be, a copy of the
+official master file of all electronic votes cast.
+Those totals in the official counts, which are derived from the ballot
+totals collected into the PEBs, must be reconcilable with the counts
+from the vote image file.
+
+The vote image file is created in the Election Report Manager by
+aggregating the data from the flash memory cards from each iVotronic.
+Therefore, if a memory card is not pulled from an iVotronic, the
+vote image file will be missing data.
+
+The second file that can be used to audit and crosscheck is the
+EL152 event log file.
+This is the aggregation of the individual event logs from each iVotronic.
+The event log file is supposed to contain a record of each event that
+occurs in each iVotronic terminal
+It is clear that not all
+events get logged, and some of the log messages provide less than
+unambiguous information, but this is the best that we have at present,
+and the file does have significant forensic value..
+An example of a subset of event log data is given in Appendix B
+(again with apologies for line wrap).
+
+Among other things, the event log records the individual votes cast by voters.
+One can count the number of vote cast events in a given machine.
+This number should equal the number of votes for that machine in the
+vote image file (based on the number of lines with asterisks).
+One can also tally all the vote events in the event log file.
+The number of such events should equal the ballot count in the vote
+image file and the number of electronic ballots in the official returns.
+
+The event log file also contains the opening and closing events for each
+terminal and the id of the PEB used for these tasks.
+To the extent that the time and date are correct inside the iVotronic,
+each event has a timestamp logging time and date.
+We will see later that the time and date cannot necessarily be believed
+and should never be assumed to be authoritative, but the timestamp
+can nonetheless sometimes have useful information and can indicate
+problems that could be corrected for subsequent elections.
+
+The Election Report Manager (ERM) creates the event log file by
+consolidating data from the flash memory cards from each iVotronic.
+Just as with the vote image file, if a memory card is not read by the
+ERM, then the event log file will be missing data.
+
+The third file used is the ERM EL68A system log file.
+This records the upload of electronic ballots collected by the PEBs and
+audit data collected from the CF cards in each terminal to the ERM.
+It also records the consolidation of audit data, the creation of the vote
+image file and the event log file and the uploading of ballot data from
+the optical scanners that read paper ballots.
+
+The final file used is the EL68ab manual adjustments log file.
+Precincts in which election workers carry out manual modifications of
+the vote tally for individual candidates are recorded in the
+EL68A system log file.
+The actual changes are recorded in the manual adjustments log file.
+
+We have also used the official vote totals posted on the SCEC website.
+In our analysis, we compare the counts in these files against counts that
+would be supported by the data in the vote image file, the iVotronic
+event log file, the ERM system log file and the ERM manual adjustments file.
+The files posted on the SCSEC website must come from the master file
+created from the ERM (see point 3 above).
+Were the steps we propose executed by election workers, we expect the source
+file for the official counts to come from the ERM.
+
+Processing the Data
+Our goal is to ensure that all devices used in an election have been
+accounted for, that all data gathered during the election has been
+uploaded to the county master files, and that the various totals in
+that data agree with each other.
+Specifically, we need to ensure that the following have been done
+so that that part of the voting process dependent on the DRES has
+been done correctly.
+
+It is necessary to ensure that each iVotronic terminal used in the
+election has been closed.
+
+It is necessary to ensure that the vote image and event log data
+from each iVotronic has been written to the CF card, and that the vote
+totals have been collected by a PEB.
+
+It is necessary to ensure that the CF cards have been pulled from
+the each iVotronic and that the event log data and the vote image
+data have been uploaded into the master file at the county level.
+
+It is necessary to ensure that all PEBs used to collect
+votes at the precinct level have had their vote totals collected into
+the master file at the county level.
+
+Ensuring that the above have taken place will ensure that all the
+DRE system hardware components in the election have been accounted for
+and that the DRE system data components have been created.
+We should now check
+
+that the totals obtained from the PEBs are consistent with the
+totals obtained by counting votes in the vote image file and are
+consistent with the totals of vote cast events from each iVotronic;
+
+and that the absentee ballots have been counted and
+that any manual adjustments are supported by data.
+
+We will leave off the last point for the moment, because it is a
+complicated process in and of itself, and we will concentrate on the
+DRE-centric part of the process.
+
+The programs of the first and fourth authors, running against the data
+files from the 11/02/2010 election were able to perform all these
+verifications and/or generate an exception list that would have caught the
+system failures we have seen from the November election.
+
+The first step in our processing is to count the votes in the
+vote image file, an sample of which is Appendix A.
+Each voter’s ballot is contained in the lines from one asterisked line to
+the next, and we can extract precinct number, iVotronic serial number,
+ballot image number, and candidate sequence number to identify a specific
+vote for a specific candidate in a specific contest.
+We note that there is no inherent one-to-one correspondence between
+iVotronic terminals, precincts, or ballot images.
+In the first author’s precinct in Richland County, for example, there
+are voters who live inside the Columbia city limits as well as voters who do not.
+On 11/02/2010, there were four distinct ballot images in that precinct.
+Voters are given a colored slip of paper that is handed to the poll worker,
+and the different colors indicate which ballot image should be downloaded
+from the PEB to the iVotronic.
+What we have referred to as the ``candidate sequence number'' is the number
+that identifies the candidate and contest for whom that line of vote data
+should be tallied.
+
+In some counties, Charleston being one example, there are multiple precincts
+voting in the same location.
+In Charleston County, a single iVotronic might be used in as many as
+five different precincts.
+Votes on a given iVotronic can thus be found for multiple ballot images in
+each of multiple precincts.
+This requires some care in counting.
+
+We note, however, that the hardest part of counting votes from the vote
+image file is the tedious issue of stripping off the print file information
+and of reading an ASCII file that is intended to be
+a human-readable formatted file.
+Once the precinct is identified (from the header line on each page),
+pulling apart each line of data is merely a question of tokenizing
+formatted ASCII text.
+Once we have tokenized, the data becomes in essence the equivalent of
+a two-dimensional array of spreadsheet data, and totaling is not hard.
+We have produced totals by precinct, iVotronic, and ballot image.
+We also produce a list of the total votes cast in each precinct by
+iVotronic and a list of the total votes cast for each iVotronic.
+Both the first and fourth authors’ programs used built-in key/value
+data structures to be able to total votes for the various candidates/contests and
+only require one pass through the source data.
+The first author, writing in Java, used this in his class as the exercise
+for his students to practice using the Java TreeMap data structure.
+
+As part of counting votes in the vote image file, we compare our total
+votes for each iVotronic and precinct against the official totals and
+print an exception list.
+In Richland County, for example, we found seven precincts with more
+official votes than were in the vote image file.
+The normal interpretation of this would be that a memory card had been
+left in an iVotronic, and indeed the county officials went back to the
+warehouse and found the memory cards still in the machines.
+We also found two precincts whose cards had been pulled from the machines
+and placed in the plastic bags to be turned into county headquarters but for
+which the bags had not been retrieved.
+None of the vote image data for those two precincts was in the file
+as originally delivered to us.
+
+As mentioned, the hard part of this count is parsing the data.
+Were this program to be done under official sponsorship of the election
+authorities, we would expect the program to make use of what must be
+an XML version of the data, not the printout produced by the ES&S
+software reading the XML.
+In this and several other parts of our processing, we had to derive
+from the printout data the list of precincts, iVotronics, PEBs, and
+such that were in use.
+An official program should be able to read directly from data files
+and tables used by the system.
+
+We have had two programs that counted the votes in the vote image file.
+The first author has written in Java and the fourth author in Perl.
+In both cases, hash tables or map data structures have allowed us to
+count votes in each contest at the minute level of (precinct, iVotronic,
+ballot image) and then to total votes at all higher levels.
+Our two counts from the two programs have agreed completely.
+More importantly, we have totaled votes by precinct and iVotronic and
+by precinct and compared our precinct totals against the certified counts
+on the South Carolina State Election Commission (SCSEC) website
+www.scvotes.org.
+
+Problems with the Data and the Counts
+
+Problems exist with the count in Richland County
+
+A sample of our output, in this case for precincts in Richland County,
+is shown below.
+This shows some of the problems we found with the counts in Richland.
+In Ward 21, there were 694 votes in the vote image file, but only 339
+votes were certified by the SCSEC.
+In Bluff Precinct, 1026 votes appear in the vote image file, but only
+254 were certified.
+And in Westminster, there are only 868 votes in the vote image file,
+but 1124 votes were certified, for an overage of 256 votes.
+Six other precincts besides Westminster had more votes certified than were
+in the vote image file.
+
+What is not directly possible for us to determine by counting votes in
+the vote image file is that two precincts in Richland
+County--—Gadsden and Riverside--—had no votes at all uploaded
+to the vote image file.
+Since we are working backwards from the data files, we can only see what
+is in the files, not what should be there.
+Were we to have begun with a list of iVotronics in use, as would be available
+to the officials conducting the election, we could easily have determined that
+no data existed from the machines assigned to these two precincts.
+
+Our initial forensic analysis of the discrepancies such as are in
+these three precincts has now become standard.
+First, in the seven precincts with more votes certified, it certainly appears
+from the size of the discrepancy that perhaps two iVotronic machines did
+not have their memory cards pulled and the data uploaded.
+Among these seven precincts, a total of 2816 votes in the certified total
+did not have the supporting data in the vote image file.
+
+After discussing these discrepancies with county officials, the
+officials went back to the warehouse and indeed found all the missing data.
+In spite of the protocol to pull the memory cards from each machine,
+ten machines still held their memory cards.
+In the case of the two precincts that were entirely missing, the bags
+containing the memory cards were found underneath the power and networking cords.
+When these cards were uploaded to the master vote image file,
+these discrepancies disappeared.
+
+It took slightly more analysis for us to determine what had happened
+in Ward 21 and Bluff Precincts.
+In the case of Ward 21, we observed that machines
+5134730, 5138357, and 5139525 contained a total of 339 votes, and
+the other three machines contained a total of 355 votes.
+This breakdown led us to examine the event log.
+As it turned out, PEB number 153090 opened, closed, and collected the
+votes from the first three machines, and PEB 152732 opened, closed,
+and collected the votes from the other three machines.
+However, the third of the files we examined, the EL68A system log file,
+records that only PEB 152090 had its votes included in the master count
+on 11/02/2010.
+The event log shows that the data for the second PEB was not collected until
+11/09/2010.
+Our conclusion was that, contrary to the official protocol, both
+a red stripe and a green stripe PEB had been used to open and close
+machines, but then protocol was followed and only the green stripe
+machine had its vote totals collected into the master count.
+
+Turning to Bluff, we noticed that there were in fact five ways that
+the votes from two machines could be added to produce the certified count of 254.
+Here again, the event log provided the explanation.
+The closing event log entries for iVotronic 5121076 appear below.
+Clearly, this machine was not closed, and did not have its votes
+collected, until Tuesday 11/09/2010, a week after the election and
+after the vote count had been certified by the SCSEC.
+Five other machines have similar records, and we can verify
+that machines 5131255 and 5133311 were the two that were properly
+closed and had their 254 total votes include in the count, and
+the other six were not closed until a week later.
+
+Richland County is not unique
+Although Richland County exhibits more problems than do many counties,
+the problems we found there are not unique.
+It is fairly common across the counties we have so far examined that
+the certified totals have exceeded the totals in the vote image file.
+We have assumed that these discrepancies have not been corruption but rather
+have been further instances in which memory cards were not pulled
+from the iVotronic machines and the individual votes uploaded to the
+vote image file.
+In several counties we have seen a few such missing cards.
+In Horry County, however, home of Myrtle Beach, 53 of the 125 precincts
+had what appeared to be missing cards, and three precincts were totally absent.
+In Horry, nearly one in six votes included in the certified count is
+not supported by the individual vote data in the vote image file.
+
+We apparently also have at least one and possibly two instances of
+the Ward 21 phenomenon.
+In Sumter County a machine with 24 votes was not included in the
+official count, and in Horry County, machine 5111151 with 114 votes
+was not included in the count.
+In Racepath 1 precinct in Horry County no fewer than three different PEBs
+were used to open the machines, and then two were used to close.
+Curiously, the PEB whose totals were included in the official count
+generated an Invalid PEB for procedure event log error message when
+the operator tried to open machine 5111151, but did not seem
+to generate a similar error when it was used to close other
+machines and collect vote totals.
+
+As mentioned above, there was a serious potential for a Ward 21
+problem in Charleston County.
+There, 21 machines had been opened with the wrong PEB, and their votes
+would not have been collected into the count had it not been discovered
+on Wednesday 11/03/2010 that a mistake had been made, and
+the significant change in the counts from the original Tuesday night
+announcements was a prominent news item.
+
+Vote image files were not initialized
+
+We have also discovered a potentially alarming bit of sloppiness
+in several counties.
+In Lexington County, we observed that the data from one machine in the
+vote image file consisted of a total of 25 votes, spread across
+18 precincts, with 16 of those precincts getting a single vote each.
+Many of these votes were straight party votes, including straight party
+votes for minor parties.
+When asked about this by the first author, the election director for
+Lexington County said that probably the vote image file had not been
+reset to zero before after testing and before vote data was uploaded.
+
+It appears that a similar failure-to-reset might have
+occurred in Horry County.
+There, one machine shows three votes, in three different precincts.
+In two of these precincts, it is impossible to go further with an
+analysis because there are votes missing from the vote image file
+(probably from missing memory cards).
+In Atlantic Beach precinct, however, the vote image file shows one
+more vote than does the certified count.
+We would suspect this is also an instance of testing the system by
+voting three times and then failing to reset the vote image file
+to empty, and that if we had the data from all the memory cards
+in the other two precincts, they would also show one vote too many
+in the vote image file.
+
+In Sumter County, we apparently either have the same phenomenon or else we
+have uncounted votes.
+There, machine 5136056 shows 24 votes in the vote image file, but
+this machine does not appear in the event log.
+Unlike Lexington and Horry Counties, though, all these votes are in
+a single precinct--—Sumter High 1--—which is not the broad-spectrum
+testing we see in the other two counties.
+What makes this look more like a failure to count is that one of the
+other three machines with vote data in this precinct had only 33 votes,
+so a small number of votes on this machine would not be anomalous.
+
+Timestamps cannot be taken to be authoritative
+
+As an additional comment on the poor quality of the data available,
+we note that although each iVotronic has an internal clock and each
+event in the event log has a ``timestamp,'' these data entries that might
+erroneously be viewed as controlling events can be highly misleading,
+since they can be set to incorrect dates and times without affecting
+the ability of the machine to collect votes and log events with incorrect times.
+
+It appears that the Daylight Savings Time algorithm, at least
+in Richland County, is the old algorithm prior to the change in 2007.
+This would have daylight time ending on the last weekend in October
+(in 2010, this would have been Sunday morning the 31st), not on the first
+weekend in November as is done under the law that went into effect in 2007.
+All the machines in Richland County started counting votes an hour early,
+and a roving technician went to all precincts during the election to reset
+the time ahead one hour.
+Had this not been done, it would have taken a PEB with greater access power
+to close the machines; the one controlling time issue in the machines seems
+to be that they cannot be closed earlier than the specified time.
+(Machines collecting votes after the specified closing time log an
+extra message to that effect, but voting after the closing time has to
+be permitted because voters in line at closing time are permitted to vote.)
+
+The problem with the timestamp in the machines, however, is that
+it does not appear to control the ability of the machine to collect votes.
+In Blythewood 1 precinct, a machine started the day with the date and
+time set to all zeros and collected 14 votes before this was changed.
+We have seen this happen in other counties as well.
+Indeed, almost no county seems immune to the problem of having
+``Vote cast by voter'' events logged with incorrect dates.
+In Richland, one machine ran all day with the date set to 11/02/2006.
+In Anderson County, one machine ran all day while set to 04/12/2053,
+rolling over to 4/13/2053 because it had begun the day at 6pm and not 6am.
+In many counties, the date was 12/02/2010; in some counties it was
+1/02/2011 or 2/01/2011, and in several instances we see machines
+set to begin at 7PM and not 7AM.
+
+Data Tables are Duplicated, Leading to Complications
+Although we have not thoroughly analyzed this point, it has become
+clear that some data tables in the ES&S system are duplicated.
+Duplication of data and tables is a very well known problem in software,
+because errors can occur when these tables are not synchronized
+and different data is used by different components in the software system.
+
+One of the more noticeable instances of duplication of data
+is that there is apparently no master file of precinct names
+in a given county.
+The precinct names in the SCSEC website for results of the
+election are different from the names
+that appear in the vote image file.
+In some cases the differences are minor---dropping apostrophes or
+a trailing s in a name or changing two words into one---but in
+at least one instance there is a genuine misspelling of chruch for church.
+
+More serious issues of tables arise, apparently, in the definition of
+the contests and ballots.
+In Lancaster County, none of the results could be collected or
+aggregated electronically.
+The email from the Public Information Officer for the SCSEC,
+Chris Whitmire, regarding the Lancaster County problem reads as follows.
+
+Under normal circumstances, one database would be used to prepare
+Personal Electronic Ballots (PEBs --- devices used to load ballots
+on voting machines) and the central vote tabulating computer.
+If both are not prepared from the same database, the automated vote
+tabulation process will not work, and paper results tapes from each
+precinct must be used to manually enter votes into the system.
+
+When the Lancaster database was originally created, it contained the
+names of all certified political parties.
+However, all parties did not nominate candidates in Lancaster County,
+and those that did not needed to be removed.
+This error would have had no effect on the functionality of the
+voting machines or their ability to accurately display ballots and
+record votes, but would cause the automated tabulation process to
+not work on election night.
+The manual process would have had to been used.
+In an attempt to solve this issue, a second, corrected database was sent
+to Lancaster.
+County election staff used this second database to prepare the
+central vote tabulating computer, but did not re-burn the PEBs.
+The result was that PEBs were prepared with the original database,
+and the central vote tabulating computer was prepared with the second database.
+
+Because two databases were used, county election officials had
+to manually enter vote totals using the paper results tapes from
+each precinct.
+As a result of manually entering vote totals, the audit logs from
+each voting machine were not created.
+
+We note that what this means is that there is no record of individual
+votes in Lancaster County, only the record of the totals collected by the PEBs.
+
+A somewhat similar problem appears to have happened in Charleston County.
+The Charleston Post and Courier reported the following on 11/08/2010.
+
+County election director Marilyn Bowers said the problem came when
+voting system technician Dave Foust deleted the United Citizens and
+Independent parties from the straight-voting column in the database
+program set up to receive the tallies from all the personal electronic
+ballots (PEBs) cast on voting machines.
+
+That caused the actual results to appear in different columns.
+Bowers said this was noticed after the first PEB was fed into the machine
+and Charleston County Clerk of Court Julie Armstrong, who was unopposed,
+received only a few or no votes while the write-in column had several hundred.
+
+It was just very obvious, Bowers said.
+You knew there weren't as many write-ins as there were votes for Julie.
+
+Identifying and fixing the problem was not as obvious,
+especially under the pressure of Election Night.
+Also, Foust had another task at hand: Fiddling with approximately
+1,000 paper absentee ballots that the scanner could not read because
+they were wet or creased or contained a static charge.
+
+Meanwhile, Bowers decided to enter the results in by hand from the
+accurate machine tapes, a slow and error-prone process that kept her,
+Foust and others at the Charleston County Election Warehouse until
+9:30 Wednesday morning.
+
+After a few hours rest, Foust figured out the error and was
+able to fix it Wednesday afternoon so the PEBs could be read.
+
+Bowers said they had tested the system before the election, but
+this problem was not identified. Lesson learned, she said.
+
+Finally, the same sort of problem occurred in Florence County.
+In a conversation with county election director David Alford, the
+third author was told that Florence County had 3 different databases
+in use at some points in time during the November election.
+The early voting absentee voting machines were using an earlier
+database than the one that was in the Unity system on 11/02/2010.
+The Unity system can only handle or accept votes that are coming from
+machines set up with the current one installed on Unity and would not
+read the early voting machines on election night.
+The poll workers had to get the poll tapes from each machine and
+manually enter the poll tapes into the database.
+
+Problems With Counting Absentee Votes
+
+Chip Moore text goes here
+
+Solutions to Some of the Problems
+
+We cannot hope that there is a silver bullet to solve all the problems
+that will come with elections.
+However, we believe we have identified several simple, fast, tests
+that will detect at least the errors we have seen in our analysis.
+These tests could---and we believe should---be run before a count is
+certified as a check that the data has been collected and accounted for as
+would be expected if the procedures and protocols were followed precisely.
+The programs of the first and fourth author accomplish these tests.
+If programs were written so as to use official internal data instead of
+parsing printout files, then those programs would be simpler and
+would be even more effective.
+In essence, what we propose to use are programs that would produce an
+exception list of iVotronics, PEBs, and memory cards that were missing
+from the results files.
+
+It is a simple matter to determine that all the iVotronic terminals
+have been closed and have had their event log and vote image data
+collected into memory cards.
+There is, presumably, an electronic list of iVotronics by serial number that
+is available to the county officials.
+If votes appear from a given machine in the vote image file, then the
+memory card for that machine has been uploaded to the file.
+This also should mean that the machine has been closed and that the
+data from the PEB that closed the machine has been uploaded.
+There may be a small number of machines that do not appear in the
+vote image file.
+For example, there were in Richland County two of the approximately 820
+machines that behaved badly on election and were shut down with no votes in them.
+This kind of machine will show up as an exception, but we would
+hope that this would be an infrequent problem.
+
+By checking for the existence of vote image data against a list
+of machines known to be in use, the Bluff precinct problem
+would have been avoided.
+The six machines that were not closed would have shown up
+on the exception list and the county would have known to close the machines
+and collect votes before the count was certified.
+
+It is similarly a simple matter to verify that all PEBs that have
+been used to open and close terminals and to collect data have had
+their data uploaded.
+The use of a PEB to open and close and to collect data shows up in
+the EL152 event log.
+For any such PEB, there should be a corresponding entry in the
+EL68A system log.
+For example, the Ward 21 PEB that did have its votes collected has an
+event log entry
+
+showing the machine being opened, and then various entries such as
+
+showing the machine being closed.  This corresponds to lines in the system log file
+
+that show that the PEB data was uploaded into the PEB count.
+
+To sum up:
+
+If the iVotronic terminals have been closed properly, and their
+flash memory cards have been collected properly, then vote
+image data should exist from each terminal.
+If a terminal is known to have been in used on election day, but
+no vote image data exists for it, then either the flash memory card
+was not pulled, or the machine collected no votes.
+The latter should be infrequent, so the absence of a known machine from the
+vote image file is either a machine not closed or a memory card not pulled.
+
+If the iVotronic terminals have been closed properly and their
+flash memory cards have been collected properly, then event
+log data should exist showing the opening and closing of that
+machine and the collection of its data.
+From that event log data one can determine which PEB did the
+open/close/collect for that terminal.
+
+If a PEB is used to collect data, and the memory cards have been
+pulled from the machines whose data was collected, then the event
+logs should show the collection of data, and the system
+log should show the upload of data.
+If there is data collection but no upload, then the PEB
+was probably used improperly, and the votes collected have probably
+not been included in the count.
+
+If a PEB is used to upload data to the count, then that PEB
+should appear in the event log as having been used to collect data.
+If no such log records exist, then it is probable that flash memory cards
+have not been properly collected.
+
+Performing these cross checks would ensure that the hardware components
+have been accounted for.
+Although we cannot ensure that the actual votes are as they were cast,
+we can at least ensure that the number of ballots cast is correct.
+The event log has a line for each Vote cast by ... event.
+The system log records the number of ballots uploaded.
+The vote image file has an asterisk at the beginning of every ballot.
+The counts of the number of ballots for each machine and from each
+PEB should be consistent, and this is an easy thing to check.
+
+Continuing Concerns
+
+In spite of the fact that we have solutions for the problems we
+have so far observed in the election system in South Carolina,
+we continue to have concerns about the system as it is implemented.
+In particular, at least the following are, and should be, continuing issues.
+
+The fact that the green and the red PEBs are functionally equivalent
+should be a cause for continued concern.
+Yes, the fact that the PEBs are the same makes it less likely that no
+useful PEB will exist in a given precinct, but it also opens the door
+for the problems we have seen in Ward 21 of Richland,
+Racepath 1 of Horry, and several precincts of Charleston counties.
+
+The fact that the timestamps in the machines would appear to be timestamps
+but are in fact of no authoritative value is of continued concern.
+Novice and more naive users of this system will probably think that the
+timestamps can be taken as timestamps, and they may choose to
+operate as if timestamps might control the operation of the machines.
+This is not the case, of course, but it will be hard to make this clear
+to poll workers.
+
+Those of us who deal with software on a regular basis are concerned about
+the duplication of files and tables in the system.
+This is something that all software experts would argue against, because
+it can lead to exactly the kinds of problems we have seen.
+The fact that the election system operates with duplicate files and
+tables must be viewed as a flaw in the system and an indication that
+our system’s software is not up to standards of quality that we would expect
+for so critical a process as elections.
+
+We also maintain concerns about the manual adjustments and the inclusion
+of the absentee votes.
+
+Finally, we should all be very concerned that the election system and the
+election officials seem so sanguine about storing vote data in a
+vote image file that has not been properly reset after testing.
+In general, it should be alarming that collecting and storing the actual
+vote data seems to have a low priority.
+
+Conclusions
+
+We propose the auditing process listed immediately above.
+Some of these checks are redundant, but all are simple to do with a
+program and there is no reason not to do redundant checking,
+especially after we have observed system failures that could
+have been detected.
+These checks would, for the most part, produce an exception list
+that could be used, prior to certifying a count, to detect the human
+errors that we expect to happen no matter how well-trained the poll workers.
+Working from the exception list, county officials could ensure that
+all the election data gets collected from the PEBs and the CF cards,
+that the vote image and
+iVotronic event log files created from the data on the CF cards
+contain data from all the terminals deployed in the election,
+that the number of vote events on the iVotronics equal the number
+of ballots in the vote image file and that, after accounting
+for paper ballots and manual adjustments, the proposed certified
+tally and the totals in the vote image file agree.
+
+We emphasize that except in one instance nothing in our analysis
+addresses the underlying question of whether the proprietary software,
+discredited by the EVEREST report, produces the correct results.
+Our analysis is of the data produced by the proprietary software, and
+we propose that data be used to crosscheck and audit the results prior
+to certification.

@@ -1,0 +1,16 @@
+The original Basket data is
+Data 1:     5 (    13    15    16    18    19)
+Data 2:     4 (    10    12    13    14)
+
+After executing the operation, the Basket data is
+Data 1:     4 (    10    12    13    14)
+Data 2:     5 (    13    15    16    18    19)
+
+The original Integer data is
+Data 1: 13579
+Data 2: 86420
+
+After executing the operation, the Integer data is
+Data 1: 86420
+Data 2: 13579
+
