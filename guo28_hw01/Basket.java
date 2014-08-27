@@ -1,5 +1,5 @@
 /*********************************************************************
- * Used with permission and modified by chongwen guo student.
+ * @author chongwen guo 
  */
 import java.util.ArrayList;
 import java.util.Collections;
